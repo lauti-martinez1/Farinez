@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { images } from '../assets/imagenes';
 import '../styles/Carrito.css';
 
-function Carrito() {
+function Carrito({ carrito }) {
     
   const [nombre, setNombre] = useState('');
   const [domicilio, setDomicilio] = useState('');
@@ -31,11 +30,19 @@ function Carrito() {
                         
 
                         <div className="Cuadro-productos">
-                                <h4>Producto 1____________________$---</h4>
-                                <h4>Producto 2____________________$---</h4>
-                                <h4>Producto 3____________________$---</h4>
-                                <h4>Producto 4____________________$---</h4>
-                                <h4>Producto 5____________________$---</h4>
+                                <div>
+                                    <div className="carrito-info">
+                                        {carrito.length === 0 ? (
+                                            <h5>Tu carrito está vacío</h5>
+                                        ) : (
+                                            <div className="producto-carrito">
+                                            {carrito.map((item, index) => (
+                                                <div key={index} >{item.nombre} ${item.precio}</div>
+                                            ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                         </div>
 
                         <div className="Cuadro-total">

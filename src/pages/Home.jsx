@@ -1,6 +1,7 @@
 
 import React from "react";
 import { images } from '../assets/imagenes';
+import {productos} from '../components/productos'
 import '../styles/Home.css'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +9,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
 
-function Home(){
+function Home({ agregarAlCarrito }){
 
 
     const settings = {
@@ -38,85 +39,20 @@ function Home(){
 
                 <div className="slider-container">
 
-                    <Slider {...settings}>
-
-                        <div>
-
-                            <div className="card">
-                                <img src={images.Chocolate} className="card-img-top" alt="..." />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Chocolate</h5>
-                                    
-                                    <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                </div>
+                <Slider {...settings}>
+                    {productos.map((prod) => (
+                        <div key={prod.id}>
+                        <div className="card">
+                            <img src={prod.imagen} className="card-img-top" alt={prod.nombre} />
+                            <div className="card-body">
+                                <h5 className="card-title">{prod.nombre}</h5>
+                                <button className="btn btn-primary" onClick={() => agregarAlCarrito(prod)}> Agregar al carrito </button>
                             </div>
                         </div>
-
-                        <div>
-                            <div className="card">
-                                    <img src={images.Leche} className="card-img-top" alt="..." />
-
-                                    <div className="card-body">
-                                        <h5 className="card-title">Leche de almendras</h5>
-                                        
-                                        <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                    </div>
-                                </div>
                         </div>
+                    ))}
+                </Slider>
 
-                        <div>
-                                <div className="card">
-                                <img src={images.PanRallado} className="card-img-top" alt="..." />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Pan rallado</h5>
-                                    
-                                    <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                                <div className="card">
-                                <img src={images.Dulce} className="card-img-top" alt="..." />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Dulce de Leche</h5>
-                                    
-                                    <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                                <div className="card">
-                                <img src={images.Alfajor} className="card-img-top" alt="..." />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Alfajor</h5>
-                                    
-                                    <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div>
-                                <div className="card">
-                                <img src={images.Premezcla} className="card-img-top" alt="..." />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Premezcla</h5>
-                                    
-                                     <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </Slider>
                 </div>
 
 

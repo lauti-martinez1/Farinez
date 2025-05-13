@@ -43,3 +43,10 @@
     margin: 5% 40%;
 
 }
+
+.producto-carrito li{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5% 10%;
+    margin-bottom: 3%;
+}
