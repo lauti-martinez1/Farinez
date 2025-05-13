@@ -27,7 +27,7 @@ function Productos() {
       prod.nombre.toLowerCase().includes(busqueda.toLowerCase())  /*Busqueda*/
     )
     .sort((a, b) => {
-      return ordenAscendente ? a.precio - b.precio : b.precio - a.precio; /*Ordenar por precio*/
+      return ordenAscendente ? a.precio - b.precio : b.precio - a.precio ; /*Ordenar por precio*/
     });
 
   const totalPaginas = Math.ceil(productosFiltrados.length / productosPorPagina);
