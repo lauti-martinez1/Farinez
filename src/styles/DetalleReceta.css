@@ -29,3 +29,19 @@ margin-left: 5%;
 .ingredientes{
     font-size:larger;
 }
+
+
+@media (max-width: 768px){
+    .Receta{display: flex;
+    flex-direction: column;}
+    
+    .pasos{font-size: large;
+    }
+
+    .Receta img{
+    width: 50vh;
+    height: 30vh;
+    border-radius: 15px;
+}
+
+}
