@@ -31,13 +31,16 @@ function Carrito({ carrito }) {
 
                         <div className="Cuadro-productos">
                                 <div>
-                                    <div className="carrito-info">
+                                    <div>
                                         {carrito.length === 0 ? (
                                             <h5>Tu carrito está vacío</h5>
                                         ) : (
                                             <div className="producto-carrito">
                                             {carrito.map((item, index) => (
-                                                <div key={index} >{item.nombre} ${item.precio}</div>
+                                                <div key={index}>
+                                                    <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
+                                                    {item.nombre}  ${item.precio}
+                                                </div>
                                             ))}
                                             </div>
                                         )}
@@ -53,7 +56,7 @@ function Carrito({ carrito }) {
                 </div>
 
 
-            <button className="btn btn-dark boton-carrito" type="submit">Finalizar compra</button>
+            <button className="btn btn-dark boton-finalizar" type="submit">Finalizar compra</button>
         </div>
     
     </>

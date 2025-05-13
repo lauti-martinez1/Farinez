@@ -43,7 +43,12 @@ function Navbar({ carrito }) {
                   ) : (
                     <div  className="producto-carrito">
                       {carrito.map((item, index) => (
-                        <li key={index}>{item.nombre}  ${item.precio}</li>
+                        <div key={index}>
+                          <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
+  
+                          {item.nombre}  ${item.precio}
+                          
+                        </div>
                       ))}
                     </div>
                   )}

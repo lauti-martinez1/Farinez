@@ -18,9 +18,8 @@
 
 .Cuadro-productos{
     background-color: #E67B22;
-    height: 100%;
     margin-left: 3%;
-    padding: 1%;
+    padding: 2%;
     border-radius: 10px;
 }
 
@@ -39,14 +38,15 @@
     justify-content: center;
 }
 
-.boton-carrito{
+.boton-finalizar{
     margin: 5% 40%;
 
 }
 
-.producto-carrito li{
+.producto-carrito div{
     background-color: white;
     border-radius: 10px;
     padding: 5% 10%;
     margin-bottom: 3%;
 }
+

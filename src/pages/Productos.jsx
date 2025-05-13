@@ -5,8 +5,6 @@ import '../styles/Productos.css';
 
 function Productos({ agregarAlCarrito }) {
 
-
-
   const [ordenAscendente, setOrdenAscendente] = useState(true); /*Ordenar por precio*/ 
   const [busqueda, setBusqueda] = useState(''); /*Buscar*/
   const [paginaActual, setPaginaActual] = useState(1); /*Paginacion*/
