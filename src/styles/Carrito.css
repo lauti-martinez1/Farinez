@@ -60,15 +60,15 @@
 }
 
 .botones-carrito img{
-  width: 70% !important;
-  height: 30% !important;
+  width: 70% ;
+  height: 30% ;
     margin-top: 10%;
     margin-right: 15%;
   
 }
 
 .botones-carrito span{
-    font-size: larger;
+    font-size: xx-large;
     margin-left: 20%;
 }
 

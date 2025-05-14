@@ -36,16 +36,14 @@
 }
 
 .botones img{
-  width: 300% !important;
-  height: 30% !important;
-  margin-top: 800%;
-  
+  width: 100% !important;
+  height: 35% !important;
+  padding: 4%;
+  margin-top: 8%;
   
 }
 
 .botones span{
-  margin-top: 800%;
-  
     font-size: larger;
     margin-left: 20%;
 }

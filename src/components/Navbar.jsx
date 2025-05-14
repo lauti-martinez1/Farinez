@@ -51,14 +51,13 @@ function Navbar({ carrito, eliminarDelCarrito, aumentarCantidad, disminuirCantid
                           {item.nombre}  ${item.precio}
                           
                           <div className="botones">
-                                <img src={images.Menos} alt="menos" style={{ width: '15%', height: '15%' }} onClick={() => disminuirCantidad(item.id)}/>
-                                <img src={images.Mas} alt="mas" style={{ width: '15%', height: '15%' }} onClick={() => aumentarCantidad(item.id)}/>
+                                <img src={images.Menos} alt="menos"  onClick={() => disminuirCantidad(item.id)}/>
+                                <img src={images.Mas} alt="mas" onClick={() => aumentarCantidad(item.id)}/>
 
                                 <span>{item.cantidad}</span>
                           </div>
 
-                          <img src={images.Basura} alt="Eliminar" style={{ width: '15%', height: '15%' }} onClick={() => eliminarDelCarrito(item.id)}/>
-                          
+                               
 
                     </div>
                       ))}

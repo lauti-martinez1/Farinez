@@ -39,18 +39,17 @@ function Carrito({ carrito, eliminarDelCarrito,aumentarCantidad, disminuirCantid
                                             <div className="producto-carrito">
                                             {carrito.map((item, index) => (
                                                 <div key={index}>
-                                                    <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
+                                                    <img src={item.imagen} alt={item.nombre} style={{ width: '50%', height: 'auto' }} />
                                                     {item.nombre}  ${item.precio}
                                                      
                                                     <div className="botones-carrito">
-                                                            <img src={images.Menos} alt="menos" style={{ width: '15%', height: '15%' }} onClick={() => disminuirCantidad(item.id)}/>
-                                                            <img src={images.Mas} alt="mas" style={{ width: '15%', height: '15%' }} onClick={() => aumentarCantidad(item.id)}/>
+                                                            <img src={images.Menos} alt="menos"  onClick={() => disminuirCantidad(item.id)}/>
+                                                            <img src={images.Mas} alt="mas" onClick={() => aumentarCantidad(item.id)}/>
 
                                                             <span>{item.cantidad}</span>
                                                     </div>
                                                     
-                                                    <img src={images.Basura} alt="Eliminar" style={{ width: '10%', height: '10%' }} onClick={() => eliminarDelCarrito(item.id)} className="basura"/>
-
+                                                  
 
                                                 </div>
                                             ))}
