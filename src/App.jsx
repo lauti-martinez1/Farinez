@@ -15,15 +15,20 @@ function App() {
     setCarrito([...carrito, producto]);
   };
 
+    const eliminarDelCarrito = (id) => {
+    const nuevoCarrito = carrito.filter((item) => item.id !== id);
+    setCarrito(nuevoCarrito);
+  };
+
   return (
     <Router>
-      <Navbar carrito={carrito} />
+      <Navbar carrito={carrito} setCarrito={setCarrito} eliminarDelCarrito={eliminarDelCarrito} />
       
       <Routes>
         <Route path='/' element={<Home agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Productos' element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Recetas' element={<Recetas />} />
-        <Route path='/Carrito' element={<Carrito carrito={carrito} />} />
+        <Route path='/Carrito' element={<Carrito carrito={carrito} eliminarDelCarrito={eliminarDelCarrito}/>} />
         <Route path="/Recetas/:id" element={<DetalleReceta />} />
       </Routes>
 

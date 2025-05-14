@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import '../styles/Carrito.css';
+import { images } from '../assets/imagenes';
 
-function Carrito({ carrito }) {
+function Carrito({ carrito, eliminarDelCarrito }) {
     
   const [nombre, setNombre] = useState('');
   const [domicilio, setDomicilio] = useState('');
@@ -40,6 +41,7 @@ function Carrito({ carrito }) {
                                                 <div key={index}>
                                                     <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
                                                     {item.nombre}  ${item.precio}
+                                                      <img src={images.Basura} alt="Eliminar" style={{ width: '15%', height: '15%' }} onClick={() => eliminarDelCarrito(item.id)}/>
                                                 </div>
                                             ))}
                                             </div>

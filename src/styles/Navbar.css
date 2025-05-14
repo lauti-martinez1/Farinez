@@ -21,7 +21,7 @@
   padding: 10%;
 }
 
-.carrito button{
+.boton-carrito{
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -29,3 +29,6 @@
   margin: 10% 0; 
 }
   
+.datos-carrito{
+  display: flex;
+}

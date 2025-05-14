@@ -1,12 +1,14 @@
 import React,{useState} from "react";
 import Logo from "../assets/Logo.png"
 import Carrito from "../assets/carrito.png"
+import { images } from '../assets/imagenes';
 import { Link } from "react-router-dom";
 import '../styles/Navbar.css'
 
 
-function Navbar({ carrito }) {
+function Navbar({ carrito, eliminarDelCarrito }) {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
+
 
   return (
     <nav className="navbar navbar-expand-lg bg-transparent fixed-top">
@@ -43,17 +45,17 @@ function Navbar({ carrito }) {
                   ) : (
                     <div  className="producto-carrito">
                       {carrito.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className="datos-carrito">
                           <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
   
                           {item.nombre}  ${item.precio}
-                          
-                        </div>
+                          <img src={images.Basura} alt="Eliminar" style={{ width: '15%', height: '15%' }} onClick={() => eliminarDelCarrito(item.id)}/>
+                    </div>
                       ))}
                     </div>
                   )}
                   <Link to="/Carrito">
-                    <button className="btn btn-dark">Ir al carrito</button>
+                    <button className="btn btn-dark boton-carrito">Ir al carrito</button>
                   </Link>
                 </div>
               </div>
