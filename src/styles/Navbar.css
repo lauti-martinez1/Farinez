@@ -32,3 +32,27 @@
 .datos-carrito{
   display: flex;
 }
+
+.bajar{
+    max-height: 250px; 
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+
+@media (max-width: 768px){
+    .navbar-nav{display: flex;
+    flex-direction: row;
+    }
+
+    .nav-item{padding: 0% 2%;}
+
+    .carrito{
+      width: 50%;
+      font-size:small;
+    }
+
+    .carrito img{
+      max-height: 50px;
+    }
+
+}

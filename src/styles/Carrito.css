@@ -21,6 +21,13 @@
     margin-left: 3%;
     padding: 2%;
     border-radius: 10px;
+    width: 40%;
+    
+    display: flex;
+}
+
+.basura{
+    margin-left: 18%;
 }
 
 .Productos-total{
@@ -49,5 +56,14 @@
     border-radius: 10px;
     padding: 5% 10%;
     margin-bottom: 3%;
+    display: flex;
 }
 
+@media (max-width: 768px){
+    .Cuadro-total h4{
+        font-size: small;
+    
+    }
+
+  
+}

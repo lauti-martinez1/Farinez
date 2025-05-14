@@ -43,7 +43,7 @@ function Navbar({ carrito, eliminarDelCarrito }) {
                   {carrito.length === 0 ? (
                     <h5>Tu carrito está vacío</h5>
                   ) : (
-                    <div  className="producto-carrito">
+                    <div  className="producto-carrito bajar">
                       {carrito.map((item, index) => (
                         <div key={index} className="datos-carrito">
                           <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
