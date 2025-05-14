@@ -51,7 +51,9 @@ function Carrito({ carrito, eliminarDelCarrito }) {
                         </div>
 
                         <div className="Cuadro-total">
-                                <h4>Subtotal: __________</h4>
+                       
+                                <h5>Subtotal: ${carrito.reduce((acc, item) => acc + item.precio, 0)}</h5>
+
                                 <h4>Costo de envio: __________</h4>
                                 <h4>Total: __________</h4>
                         </div>
