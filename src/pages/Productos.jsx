@@ -3,7 +3,7 @@ import { images } from '../assets/imagenes';
 import {productos} from '../components/productos'
 import '../styles/Productos.css';
 
-function Productos({ agregarAlCarrito }) {
+function Productos({ agregarAlCarrito}) {
 
   const [ordenAscendente, setOrdenAscendente] = useState(true); /*Ordenar por precio*/ 
   const [busqueda, setBusqueda] = useState(''); /*Buscar*/

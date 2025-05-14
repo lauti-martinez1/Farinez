@@ -16,6 +16,8 @@ import Nesquik from './nesquik.jpg'
 import FondoRecetas from './FondoRecetas.png'
 import WaffleDulce from './waffle con dulce de leche.jpg'
 import Basura from './basura.png'
+import Mas from './plus.png'
+import Menos from './minus.png'
 
 export const images = {
     Leche,
@@ -35,6 +37,8 @@ export const images = {
     Nesquik,
     FondoRecetas,
     WaffleDulce,
-    Basura
+    Basura,
+    Mas,
+    Menos
   };
   

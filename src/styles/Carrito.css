@@ -59,6 +59,19 @@
     display: flex;
 }
 
+.botones-carrito img{
+  width: 70% !important;
+  height: 30% !important;
+    margin-top: 10%;
+    margin-right: 15%;
+  
+}
+
+.botones-carrito span{
+    font-size: larger;
+    margin-left: 20%;
+}
+
 @media (max-width: 768px){
     .Cuadro-total h4{
         font-size: small;

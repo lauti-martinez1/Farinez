@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../styles/Carrito.css';
 import { images } from '../assets/imagenes';
 
-function Carrito({ carrito, eliminarDelCarrito }) {
+function Carrito({ carrito, eliminarDelCarrito,aumentarCantidad, disminuirCantidad }) {
     
   const [nombre, setNombre] = useState('');
   const [domicilio, setDomicilio] = useState('');
@@ -41,7 +41,17 @@ function Carrito({ carrito, eliminarDelCarrito }) {
                                                 <div key={index}>
                                                     <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
                                                     {item.nombre}  ${item.precio}
-                                                      <img src={images.Basura} alt="Eliminar" style={{ width: '10%', height: '10%' }} onClick={() => eliminarDelCarrito(item.id)} className="basura"/>
+                                                     
+                                                    <div className="botones-carrito">
+                                                            <img src={images.Menos} alt="menos" style={{ width: '15%', height: '15%' }} onClick={() => disminuirCantidad(item.id)}/>
+                                                            <img src={images.Mas} alt="mas" style={{ width: '15%', height: '15%' }} onClick={() => aumentarCantidad(item.id)}/>
+
+                                                            <span>{item.cantidad}</span>
+                                                    </div>
+                                                    
+                                                    <img src={images.Basura} alt="Eliminar" style={{ width: '10%', height: '10%' }} onClick={() => eliminarDelCarrito(item.id)} className="basura"/>
+
+
                                                 </div>
                                             ))}
                                             </div>
@@ -52,7 +62,7 @@ function Carrito({ carrito, eliminarDelCarrito }) {
 
                         <div className="Cuadro-total">
                        
-                                <h4>Subtotal: ${carrito.reduce((acc, item) => acc + item.precio, 0)}</h4>
+                             <h4>Subtotal: ${carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0)}</h4>
 
                                 <h4>Costo de envio: __________</h4>
                                 <h4>Total: __________</h4>

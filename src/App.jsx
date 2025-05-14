@@ -12,7 +12,20 @@ function App() {
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
+      const existente = carrito.find(item => item.id === producto.id);
+      
+      if (existente) {
+
+        const actualizado = carrito.map(item =>
+          item.id === producto.id ? { ...item, cantidad: item.cantidad + 1 } : item
+        );
+
+        setCarrito(actualizado);
+      } 
+      
+      else {
+        setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+      }
   };
 
     const eliminarDelCarrito = (id) => {
@@ -20,15 +33,37 @@ function App() {
     setCarrito(nuevoCarrito);
   };
 
+
+  const aumentarCantidad = (id) => {
+      const actualizado = carrito.map(item =>
+        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
+      );
+      setCarrito(actualizado);
+  };
+
+
+  const disminuirCantidad = (id) => {
+      const actualizado = carrito
+        .map(item =>
+          item.id === id ? { ...item, cantidad: item.cantidad - 1 } : item
+        )
+        .filter(item => item.cantidad > 0); // Elimina si cantidad queda en 0
+
+      setCarrito(actualizado);
+  };
+
+
+
+
   return (
     <Router>
-      <Navbar carrito={carrito} setCarrito={setCarrito} eliminarDelCarrito={eliminarDelCarrito} />
+      <Navbar carrito={carrito} setCarrito={setCarrito} eliminarDelCarrito={eliminarDelCarrito}  aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>
       
       <Routes>
         <Route path='/' element={<Home agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Productos' element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Recetas' element={<Recetas />} />
-        <Route path='/Carrito' element={<Carrito carrito={carrito} eliminarDelCarrito={eliminarDelCarrito}/>} />
+        <Route path='/Carrito' element={<Carrito carrito={carrito} eliminarDelCarrito={eliminarDelCarrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>} />
         <Route path="/Recetas/:id" element={<DetalleReceta />} />
       </Routes>
 

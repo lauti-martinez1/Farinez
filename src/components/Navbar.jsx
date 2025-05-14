@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import '../styles/Navbar.css'
 
 
-function Navbar({ carrito, eliminarDelCarrito }) {
+function Navbar({ carrito, eliminarDelCarrito, aumentarCantidad, disminuirCantidad }) {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
 
 
@@ -46,10 +46,20 @@ function Navbar({ carrito, eliminarDelCarrito }) {
                     <div  className="producto-carrito bajar">
                       {carrito.map((item, index) => (
                         <div key={index} className="datos-carrito">
-                          <img src={item.imagen} alt={item.nombre} style={{ width: '30%', height: 'auto' }} />
+                          <img src={item.imagen} alt={item.nombre} style={{ width: '40%', height: '40%' }} />
   
                           {item.nombre}  ${item.precio}
+                          
+                          <div className="botones">
+                                <img src={images.Menos} alt="menos" style={{ width: '15%', height: '15%' }} onClick={() => disminuirCantidad(item.id)}/>
+                                <img src={images.Mas} alt="mas" style={{ width: '15%', height: '15%' }} onClick={() => aumentarCantidad(item.id)}/>
+
+                                <span>{item.cantidad}</span>
+                          </div>
+
                           <img src={images.Basura} alt="Eliminar" style={{ width: '15%', height: '15%' }} onClick={() => eliminarDelCarrito(item.id)}/>
+                          
+
                     </div>
                       ))}
                     </div>
