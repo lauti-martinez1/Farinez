@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import '../styles/Navbar.css'
 
 
-function Navbar({ carrito, eliminarDelCarrito, aumentarCantidad, disminuirCantidad }) {
+function Navbar({ carrito, aumentarCantidad, disminuirCantidad }) {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
 
 

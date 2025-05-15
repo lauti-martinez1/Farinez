@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../styles/Carrito.css';
 import { images } from '../assets/imagenes';
 
-function Carrito({ carrito, eliminarDelCarrito,aumentarCantidad, disminuirCantidad }) {
+function Carrito({ carrito,aumentarCantidad, disminuirCantidad }) {
     
   const [nombre, setNombre] = useState('');
   const [domicilio, setDomicilio] = useState('');
