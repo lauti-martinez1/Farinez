@@ -28,12 +28,6 @@ function App() {
       }
   };
 
-    const eliminarDelCarrito = (id) => {
-    const nuevoCarrito = carrito.filter((item) => item.id !== id);
-    setCarrito(nuevoCarrito);
-  };
-
-
   const aumentarCantidad = (id) => {
       const actualizado = carrito.map(item =>
         item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
@@ -57,13 +51,13 @@ function App() {
 
   return (
     <Router>
-      <Navbar carrito={carrito} setCarrito={setCarrito} eliminarDelCarrito={eliminarDelCarrito}  aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>
+      <Navbar carrito={carrito} setCarrito={setCarrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>
       
       <Routes>
         <Route path='/' element={<Home agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Productos' element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Recetas' element={<Recetas />} />
-        <Route path='/Carrito' element={<Carrito carrito={carrito} eliminarDelCarrito={eliminarDelCarrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>} />
+        <Route path='/Carrito' element={<Carrito carrito={carrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>} />
         <Route path="/Recetas/:id" element={<DetalleReceta />} />
       </Routes>
 
