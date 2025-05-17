@@ -46,9 +46,6 @@ function App() {
       setCarrito(actualizado);
   };
 
-
-
-
   return (
     <Router>
       <Navbar carrito={carrito} setCarrito={setCarrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>

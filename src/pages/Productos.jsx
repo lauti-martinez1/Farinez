@@ -49,7 +49,7 @@ function Productos({ agregarAlCarrito}) {
       <div className="grupo-boton-cards">
         <div className="orden-precio">
 
-          <button className="btn btn-secondary" onClick={() => setOrdenAscendente(!ordenAscendente)}>
+          <button className="btn btn-secondary boton-ordenar" onClick={() => setOrdenAscendente(!ordenAscendente)}>
             Ordenar por precio: {ordenAscendente ? 'Menor a mayor' : 'Mayor a menor'}
           </button>
 

@@ -74,6 +74,11 @@
   box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 }
 
+.boton-ordenar{
+  background-color: #E67B22;
+  border: inherit;
+}
+
 
 @media (max-width: 768px){
   .card-titulo-precio{
