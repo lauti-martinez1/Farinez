@@ -46,7 +46,7 @@ function Home({ agregarAlCarrito }){
                                 <img src={prod.imagen} className="card-img-top" alt={prod.nombre} />
                                 <div className="card-body">
                                     <h5 className="card-title">{prod.nombre}</h5>
-                                    <button className="btn btn-primary" onClick={() => agregarAlCarrito(prod)}> Agregar al carrito </button>
+                                    <button className="btn btn-primary" onClick={() => agregarAlCarrito([prod])}> Agregar al carrito </button>
                                 </div>
                             </div>
                         </div>

@@ -72,7 +72,7 @@ function Productos({ agregarAlCarrito}) {
                   </div>
 
                   <button className="btn btn-dark" onClick={() => setProductoActivo(prod)}>Descripción</button> 
-                  <button className="btn btn-primary" onClick={() => agregarAlCarrito(prod)}>Agregar al carrito</button>
+                  <button className="btn btn-primary" onClick={() => agregarAlCarrito([prod])}>Agregar al carrito</button>
                   
                 </div>
               </div>

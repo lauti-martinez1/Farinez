@@ -6,7 +6,10 @@ export const recetas = [
     id: 1,
     nombre: 'Waffles con dulce de leche',
     imagen: images.WaffleDulce,
-    ingredientes: ['1 huevo', '1/2 taza de azucar', '1/2 taza de leche', '1/2 tacita de aceite', '1 taza de harina', 'Escencia de vainilla'],
+    ingredientes: ['1 huevo', '1/2 taza de azucar', '1/2 taza de leche', '1/2 tacita de aceite', '1 taza de harina', 'Escencia de vainilla','Dulce de leche a eleccion'],
+    listaIngredientes: [ { id: 2, nombre: 'Leche de almendras', precio: 3000, cantidad:0, imagen: images.Leche, descripcion: 'Leche de almendras sabor original 1 Litro' },
+    , { id: 6, nombre: 'Premezcla', precio: 6000, cantidad:0, imagen: images.Premezcla, descripcion: 'Premezcla Santa Maria libre de gluten 100g' }, { id: 4, nombre: 'Dulce de Leche', precio: 4000, cantidad:0, imagen: images.Dulce, descripcion: 'Dulce de leche La Serenisima 400g' }
+   ],
     pasos: [
       'Colocar en un bowl el huevo, el azúcar y la esencia, luego mezclar bien.',
       'Colocar la leche y el aceite y mezclar hasta que se una bien.',
@@ -20,6 +23,9 @@ export const recetas = [
     nombre: 'Pizza sin tacc',
     imagen: images.Pizza,
     ingredientes: ['200g Premezcla', '1 cucharada de polvo para hornear', '150ml de leche', 'Salsa de tomate', '200 gr de queso cremoso','150 gr panceta ahumada', 'Cebolla y morron a gusto'],
+        listaIngredientes: [ { id: 2, nombre: 'Leche de almendras', precio: 3000, cantidad:0, imagen: images.Leche, descripcion: 'Leche de almendras sabor original 1 Litro' },
+    , { id: 6, nombre: 'Premezcla', precio: 6000, cantidad:0, imagen: images.Premezcla, descripcion: 'Premezcla Santa Maria libre de gluten 100g' }
+   ],
     pasos: [
       'En un cuenco poner la Premezcla sal le agregamos leche tibia, a la vez mezclamos vamos viendo si le falta más leche o premezcla, ya cuando la mezcla esté lista, le agregamos el polvo de hornear mezclamos nuevamente con el batidor.',
       'Aceitar una pizzera volcar la masa mandar al horno por 10 o 15 minutos',
@@ -33,6 +39,8 @@ export const recetas = [
     nombre: 'Pan sin gluten',
     imagen: images.Pan,
     ingredientes: ['300 g de mezcla de harinas sin gluten ', '10 g de levadura seca.', '1 cucharadita de azúcar.', '1 cucharadita de sal.', '250 ml de agua tibia.','2 cucharadas de aceite de oliva.', '1 cucharada de vinagre de manzana.'],
+    listaIngredientes: [ { id: 6, nombre: 'Premezcla', precio: 6000, cantidad:0, imagen: images.Premezcla, descripcion: 'Premezcla Santa Maria libre de gluten 100g' }
+   ],
     pasos: [
       'En un bol grande, mezclar la harina sin gluten y la sal.',
       'En otro recipiente, disolver la levadura seca y el azúcar en el agua tibia. Dejar reposar durante unos 5 minutos hasta que la levadura empiece a espumar.',
@@ -50,6 +58,8 @@ export const recetas = [
     nombre: 'Galletas',
     imagen: images.Galletas,
     ingredientes: ['2 tazas azúcar rubia', '1 cucharada miel', '100 gr manteca pomada', 'Ralladura de 2 limones', '1 cucharadita esencia de vainilla','2 huevos', '3 tazas avena certificada sin gluten','1 taza harina de trigo sarraceno'],
+    listaIngredientes: [ { id: 6, nombre: 'Premezcla', precio: 6000, cantidad:0, imagen: images.Premezcla, descripcion: 'Premezcla Santa Maria libre de gluten 100g' }
+],
     pasos: [
       'Batir la manteca pomada con el azúcar y la miel hasta obtener una crema blanda.',
       'Agregar la ralladura de los limones y la vainilla, batir hasta integrar.',

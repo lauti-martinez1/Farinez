@@ -11,22 +11,24 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   const [carrito, setCarrito] = useState([]);
 
-  const agregarAlCarrito = (producto) => {
-      const existente = carrito.find(item => item.id === producto.id);
-      
+ const agregarAlCarrito = (productos) => {
+  productos.forEach(producto => {
+    setCarrito(prevCarrito => {
+      const existente = prevCarrito.find(item => item.id === producto.id);
+
       if (existente) {
-
-        const actualizado = carrito.map(item =>
-          item.id === producto.id ? { ...item, cantidad: item.cantidad + 1 } : item
+        return prevCarrito.map(item =>
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item
         );
-
-        setCarrito(actualizado);
-      } 
-      
-      else {
-        setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+      } else {
+        return [...prevCarrito, { ...producto, cantidad: 1 }];
       }
-  };
+    });
+  });
+};
+
 
   const aumentarCantidad = (id) => {
       const actualizado = carrito.map(item =>
@@ -53,9 +55,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home agregarAlCarrito={agregarAlCarrito} />} />
         <Route path='/Productos' element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
-        <Route path='/Recetas' element={<Recetas />} />
+        <Route path='/Recetas' element={<Recetas agregarAlCarrito={agregarAlCarrito}/>} />
         <Route path='/Carrito' element={<Carrito carrito={carrito} aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad}/>} />
-        <Route path="/Recetas/:id" element={<DetalleReceta />} />
+        <Route path="/Recetas/:id" element={<DetalleReceta  />} />
       </Routes>
 
       <Footer />
