@@ -48,7 +48,7 @@ function Navbar({ carrito, aumentarCantidad, disminuirCantidad }) {
                         <div key={index} className="datos-carrito">
                           <img src={item.imagen} alt={item.nombre} style={{ width: '40%', height: '40%' }} />
   
-                          {item.nombre}  ${item.precio}
+                          {item.nombre}  ${item.precio*item.cantidad}
                           
                           <div className="botones">
                                 <img src={images.Menos} alt="menos"  onClick={() => disminuirCantidad(item.id)}/>

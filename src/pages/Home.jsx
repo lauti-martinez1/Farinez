@@ -19,7 +19,16 @@ function Home({ agregarAlCarrito }){
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 500 
+        autoplaySpeed: 500 ,
+        responsive: [
+            {
+            breakpoint: 1024, 
+            settings: {
+                slidesToShow: 3,
+            }
+            },
+               
+        ]
         
       };
 

@@ -61,7 +61,7 @@ const total = subtotal + envio;
                                             {carrito.map((item, index) => (
                                                 <div key={index}>
                                                     <img src={item.imagen} alt={item.nombre} style={{ width: '50%', height: 'auto' }} />
-                                                    {item.nombre}  ${item.precio}
+                                                    {item.nombre}  ${item.precio*item.cantidad}
                                                      
                                                     <div className="botones-carrito">
                                                             <img src={images.Menos} alt="menos"  onClick={() => disminuirCantidad(item.id)}/>
@@ -83,8 +83,8 @@ const total = subtotal + envio;
                         <div className="Cuadro-total">
                        
                       <h4>Subtotal: ${subtotal}</h4>
-<h4>Costo de envío: ${envio}</h4>
-<h4>Total: ${total}</h4>
+                        <h4>Costo de envío: ${envio}</h4>
+                        <h4>Total: ${total}</h4>
 
 
                         </div>
