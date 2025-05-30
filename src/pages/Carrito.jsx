@@ -1,29 +1,50 @@
 import React, { useState } from "react";
 import '../styles/Carrito.css';
 import { images } from '../assets/imagenes';
+import MapaLocal from '../components/MapaLocal';
 
 function Carrito({ carrito,aumentarCantidad, disminuirCantidad }) {
     
   const [nombre, setNombre] = useState('');
   const [domicilio, setDomicilio] = useState('');
   const [codigoPostal, setCodigoPostal] = useState('');
+  const [mostrarMapa,setMostrarMapa] = useState(false);
+
+  const subtotal = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+const envio = subtotal > 0 ? 2000 : 0;
+const total = subtotal + envio;
 
   return (
     <>
         <div className="Home">
-                <div className="Cuadro-datos">
-                    
-                    <nav className="datos">
+
+             
+                
+                <div className="mapa-cuadro">
+                    <div className="mapa">
+                        <button className="nav-link" onClick={() => setMostrarMapa(prev => !prev)}><h2>Nuestra Ubicación</h2></button>
+                        {mostrarMapa &&(<MapaLocal />)}
+                    </div>
+
+                    <div className="Cuadro-datos">
                         
-                        <form className="form-inline my-2 my-lg-0" onSubmit={(e) => { e.preventDefault(); }} >
+                        <nav className="datos">
                             
-                            <input className="form-control mr-sm-2" type="search" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                            <input className="form-control mr-sm-2" type="search" placeholder="Domicilio" value={domicilio} onChange={(e) => setDomicilio(e.target.value)} />
-                            <input className="form-control mr-sm-2" type="search" placeholder="Codigo postal" value={codigoPostal} onChange={(e) => setCodigoPostal(e.target.value)} />
+                            <form className="form-inline my-2 my-lg-0" onSubmit={(e) => { e.preventDefault(); }} >
+                                
+                                <input className="form-control mr-sm-2" type="search" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                                <input className="form-control mr-sm-2" type="search" placeholder="Domicilio" value={domicilio} onChange={(e) => setDomicilio(e.target.value)} />
+                                <input className="form-control mr-sm-2" type="search" placeholder="Codigo postal" value={codigoPostal} onChange={(e) => setCodigoPostal(e.target.value)} />
+                            
+                            </form>
+                        </nav>
+
                         
-                        </form>
-                    </nav>
-                </div>
+                    </div>
+                </div>  
+
+
+      
 
                 <h2>Tu carrito</h2>
 
@@ -61,16 +82,21 @@ function Carrito({ carrito,aumentarCantidad, disminuirCantidad }) {
 
                         <div className="Cuadro-total">
                        
-                             <h4>Subtotal: ${carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0)}</h4>
+                      <h4>Subtotal: ${subtotal}</h4>
+<h4>Costo de envío: ${envio}</h4>
+<h4>Total: ${total}</h4>
 
-                                <h4>Costo de envio: __________</h4>
-                                <h4>Total: __________</h4>
+
                         </div>
                 </div>
 
 
             <button className="btn btn-dark boton-finalizar" type="submit">Finalizar compra</button>
+
+            
+
         </div>
+
     
     </>
    );

@@ -75,6 +75,11 @@ h2{
   width: 100%;
 }
 
+.recetas-cards a {
+  text-decoration: none;   
+  color: inherit;          
+}
+
 
 @media (max-width: 768px) {
     .GrupoCard h5 {

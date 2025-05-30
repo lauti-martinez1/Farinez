@@ -1,7 +1,6 @@
 .Cuadro-datos{
     background-color: #035263;
     height: 100%;
-    margin-top: 10%;
     margin-left: 20%;
     margin-right: 20%;
     padding: 1.5%;
@@ -33,7 +32,7 @@
 .Productos-total{
     display: flex;
     justify-content: space-between;
-    
+    align-items: flex-end;
 }
 
 .Cuadro-total{
@@ -43,13 +42,20 @@
     border-radius: 10px;    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
+    
 }
 
 .boton-finalizar{
     margin: 5% 40%;
 
 }
+
+.mapa{
+    margin-top:7%; 
+}
+
+
 
 .producto-carrito div{
     background-color: white;

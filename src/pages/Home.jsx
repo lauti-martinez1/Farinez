@@ -70,48 +70,55 @@ function Home({ agregarAlCarrito }){
 
                                 <div>
 
-                                        <div className="card">
-                                        <img src={images.Fondo} className="card-img-receta" alt="..." />
+                                       <Link to={`/Recetas/1`} > <div className="card">
+                                        <img src={images.WaffleDulce} className="card-img-receta" alt="..." />
 
                                         <div className="card-body">
                                             <h5 className="card-title">Waffles</h5>
-                                            
                                         </div>
+                                        
                                     </div>
+                                    </Link>
                                 </div>
 
 
                                 <div>
+                                    <Link to={`/Recetas/2`} >
                                         <div className="card">
                                         <img src={images.Pizza} className="card-img-receta" alt="..." />
 
                                         <div className="card-body">
-                                            <h5 className="card-title">Pizzas</h5>
+                                             <h5 className="card-title">Pizzas</h5>
                                             
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div>
+                                     <Link to={`/Recetas/3`} >
                                         <div className="card">
-                                        <img src={images.Pan} className="card-img-receta" alt="..." />
+                                            <img src={images.Pan} className="card-img-receta" alt="..." />
 
-                                        <div className="card-body">
-                                            <h5 className="card-title">Panes</h5>
-                                            
-                                        </div>
-                                    </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title">Panes</h5>
+                                                
+                                            </div>
+                                         </div>
+                                    </Link>
                                 </div>
 
                                 <div>
+                                     <Link to={`/Recetas/4`} >
                                         <div className="card">
-                                        <img src={images.Galletas} className="card-img-receta" alt="..." />
+                                            <img src={images.Galletas} className="card-img-receta" alt="..." />
 
-                                        <div className="card-body">
-                                            <h5 className="card-title">Galletas</h5>
-                                            
+                                            <div className="card-body">
+                                                <h5 className="card-title">Galletas</h5>
+                                                
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
 
 
